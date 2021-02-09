@@ -3,8 +3,10 @@ const hrhand=document.querySelector("#hour");
 const minhand=document.querySelector("#minute");
 const sechand=document.querySelector("#second");
 const btn=document.querySelector(".clocktype button")
+const dmbtn=document.getElementsByName("darkmode")
 
 var btnsmooth=false;    
+var dm=false;
 
 var date=new Date();
 let hr= date.getHours();
@@ -62,4 +64,30 @@ function changehandcolor(){
     document.querySelector(".hour-arm").style.stroke=handcolor;
     document.querySelector(".minute-arm").style.stroke=handcolor;
     document.querySelector(".second-arm").style.stroke=handcolor;
+}
+
+function darkmod(){
+    if(dm)
+    {
+        dm=false;
+        dmbtn.innerHTML="Light Theme"
+        document.querySelector("body").style="color: black;background-color:white;"
+        document.querySelector(".mid-circle").style.fill="#000";
+        document.querySelector(".hour-arm").style.stroke="#000";
+        document.querySelector(".minute-arm").style.stroke="#000";
+        document.querySelector(".second-arm").style.stroke="#000";
+        document.querySelector(".circle").style.stroke="#000";
+        document.querySelector(".hour-marks").style.stroke="#000";
+    }
+    else{
+        dm=true;
+        btn.innerHTML="Dark Theme"        
+        document.querySelector("body").style="color: aquamarine;background-color:#121212;"
+        document.querySelector(".mid-circle").style.fill="#46D84B";
+        document.querySelector(".hour-arm").style.stroke="#46D84B";
+        document.querySelector(".minute-arm").style.stroke="#46D84B";
+        document.querySelector(".second-arm").style.stroke="#46D84B";
+        document.querySelector(".circle").style.stroke="#31C4B3";
+        document.querySelector(".hour-marks").style.stroke="#31C4B3";
+    }
 }
