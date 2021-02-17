@@ -2,8 +2,8 @@
 const hrhand=document.querySelector("#hour");
 const minhand=document.querySelector("#minute");
 const sechand=document.querySelector("#second");
-const btn=document.querySelector(".clocktype button")
-const dmbtn=document.getElementsByName("darkmode")
+const btn=document.querySelector("#clocktype")
+const dmbtn=document.querySelector("#darkmode")
 
 var btnsmooth=false;    
 var dm=false;
@@ -44,7 +44,7 @@ function clocktypechanged()
     }
     else{
         btnsmooth=true;
-        btn.innerHTML=" Tic Tic"
+        btn.innerHTML="Tic Tic"
         hrhand.style.transition="transform .5s ease-in-out";
         minhand.style.transition="transform .5s ease-in-out";
         sechand.style.transition="transform .5s ease-in-out";
@@ -68,8 +68,8 @@ function changehandcolor(){
 
 function darkmod(){
     if(dm)
-    {
-        dm=false;
+    {   
+        dm=!dm;
         dmbtn.innerHTML="Light Theme"
         document.querySelector("body").style="color: black;background-color:white;"
         document.querySelector(".mid-circle").style.fill="#000";
@@ -80,8 +80,8 @@ function darkmod(){
         document.querySelector(".hour-marks").style.stroke="#000";
     }
     else{
-        dm=true;
-        btn.innerHTML="Dark Theme"        
+        dm=!dm;
+        dmbtn.innerHTML="Dark Theme"        
         document.querySelector("body").style="color: aquamarine;background-color:#121212;"
         document.querySelector(".mid-circle").style.fill="#46D84B";
         document.querySelector(".hour-arm").style.stroke="#46D84B";
