@@ -70,8 +70,7 @@ function darkmod(){
     if(dm)
     {   
         dm=!dm;
-        dmbtn.innerHTML="Dark Theme"   
-
+        dmbtn.innerHTML="Dark Theme"        
         document.querySelector("body").style="color: black;background-color:white;"
         document.querySelector(".mid-circle").style.fill="#000";
         document.querySelector(".hour-arm").style.stroke="#000";
